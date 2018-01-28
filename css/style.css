@@ -137,6 +137,17 @@ body[data-aos-duration='70000'] [data-aos],
 }
 
 
+
+/*About Me*/
+.about-container{
+    padding: 60px 0px 100px 0px;
+}
+.card-padding{
+    padding: 30px 15px 30px 15px;
+}
+
+
+
 /*Timeline*/
 
 .timeline-header {
