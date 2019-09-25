@@ -98,7 +98,7 @@
 
     .list-group-item {
         padding: 2.75rem 1.25rem 2.75rem .5rem !important;
-        text-align: center!important;
+        text-align: center !important;
     }
 
     #category1 {
@@ -599,7 +599,9 @@
 
 </div>
 
-<div id="category2" >
+
+<div id="category2"
+    style="display: none; position: fixed !important; z-index: 999 !important;background: #f9f9f9 !important; top:0;left:0;height: 100% !important;overflow-y: scroll !important; width: 100% !important;font-family: 'Montserrat', sans-serif !important;">
     <div class="container">
         <div class="row" style="padding-top: 20px">
             <div class="col-sm-12">
@@ -621,7 +623,7 @@
             <div style="margin-top: -5px !important; margin-bottom: 8px !important;">
                 <div class="col-xs-4 div-contents" style="font-family: 'Montserrat', sans-serif !important;">
                     <a href="https://pages.daraz.com.bd/wow/i/bd/landingpagetest/custom-footer?hybrid=1"
-                        style="cursor:pointer !important; font-weight: 600 !important;font-size: 9.6px !important;text-decoration: none !important;color: black;">
+                        style="cursor:pointer !important; font-weight: 600 !important;font-size: 12.6px !important;text-decoration: none !important;color: black;">
                         <img class="div-img" src="https://gw.alicdn.com/tfs/TB1Wgodb4v1gK0jSZFFXXb0sXXa-208-208.png"
                             style="margin-bottom: 8px;">
                         <span>Homepage</span>
@@ -631,14 +633,15 @@
                     style="font-family: 'Montserrat', sans-serif !important; cursor: pointer;">
                     <img class="div-img" src="https://gw.alicdn.com/tfs/TB1n32NbFT7gK0jSZFpXXaTkpXa-100-100.png"
                         style="margin-bottom: 8px;">
-                    <span style="cursor:pointer; font-weight: 600;font-size: 9.6px;">Women's</span>
+                    <span style="cursor:pointer; font-weight: 600;font-size: 12.6px;">Outsite Dhaka</span>
                 </div>
                 <div class="col-xs-4 div-contents" onclick="category1()"
                     style="font-family: 'Montserrat', sans-serif !important; cursor: pointer;">
                     <img class="div-img" src="https://gw.alicdn.com/tfs/TB1OotgbebviK0jSZFNXXaApXXa-100-100.png"
                         style="margin-bottom: 8px;">
-                    <span style="cursor:pointer; font-weight: 600;font-size: 9.6px;">Men's</span>
+                    <span style="cursor:pointer; font-weight: 600;font-size: 12.6px;">Categories</span>
                 </div>
+
             </div>
         </div>
     </div>
@@ -651,53 +654,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-    // Make the DIV element draggable:
-    dragElement(document.getElementById("drag"));
-
-    function dragElement(elmnt) {
-        var pos1 = 0,
-            pos2 = 0,
-            pos3 = 0,
-            pos4 = 0;
-        if (document.getElementById(elmnt.id + "dragImg")) {
-            // if present, the header is where you move the DIV from:
-            document.getElementById(elmnt.id + "dragImg").onmousedown = dragMouseDown;
-        } else {
-            // otherwise, move the DIV from anywhere inside the DIV:
-            elmnt.onmousedown = dragMouseDown;
-        }
-
-        function dragMouseDown(e) {
-            e = e || window.event;
-            e.preventDefault();
-            // get the mouse cursor position at startup:
-            pos3 = e.clientX;
-            pos4 = e.clientY;
-            document.onmouseup = closeDragElement;
-            // call a function whenever the cursor moves:
-            document.onmousemove = elementDrag;
-        }
-
-        function elementDrag(e) {
-            e = e || window.event;
-            e.preventDefault();
-            // calculate the new cursor position:
-            pos1 = pos3 - e.clientX;
-            pos2 = pos4 - e.clientY;
-            pos3 = e.clientX;
-            pos4 = e.clientY;
-            // set the element's new position:
-            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-        }
-
-        function closeDragElement() {
-            // stop moving when mouse button is released:
-            document.onmouseup = null;
-            document.onmousemove = null;
-        }
-    }
-
     function category1() {
         var x = document.getElementById("category1");
         var z = document.getElementById("category2");
