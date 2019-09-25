@@ -16,11 +16,11 @@
         max-width: 870px;
         cursor: pointer;
         overflow-y: auto;
-        max-height: 400px;
+        max-height: 700px;
         box-sizing: border-box;
         z-index: 1001;
         padding-left: 15px;
-        padding-right: 15px;
+        padding-right: 32px;
     }
 
     .link-class:hover {
@@ -336,13 +336,6 @@
         <div class="col-xs-12">
             <hr class="hr-margin">
         </div>
-
-        <div class="col-xs-6">
-            <a href="https://pages.daraz.com.bd/wow/i/bd/cp-campaigns/maser-bazar-sub-cat-3a?hybrid=1">
-                <img src="https://laz-img-cdn.alicdn.com/images/ims-web/TB1fdsVgYj1gK0jSZFuXXcrHpXa.jpg"
-                    class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"></a><br>
-            <h6 class="text-center mxt-60">সাবান ও হ্যান্ড ওয়াশ</h6>
-        </div>
         <div class="col-xs-6">
             <a href="https://pages.daraz.com.bd/wow/i/bd/cp-campaigns/maser-bazar-sub-cat-3b?hybrid=1">
                 <img src="https://laz-img-cdn.alicdn.com/images/ims-web/TB1dqETg5_1gK0jSZFqXXcpaXXa.jpg"
@@ -360,6 +353,12 @@
                 <img src="https://laz-img-cdn.alicdn.com/images/ims-web/TB10UAVg7T2gK0jSZFkXXcIQFXa.jpg"
                     class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"><br></a>
             <h6 class="text-center mxt-60">চুলের তেল এবং ট্রিটমেন্ট</h6>
+        </div>
+        <div class="col-xs-6">
+            <a href="https://pages.daraz.com.bd/wow/i/bd/cp-campaigns/maser-bazar-sub-cat-3a?hybrid=1">
+                <img src="https://laz-img-cdn.alicdn.com/images/ims-web/TB1fdsVgYj1gK0jSZFuXXcrHpXa.jpg"
+                    class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"></a><br>
+            <h6 class="text-center mxt-60">সাবান ও হ্যান্ড ওয়াশ</h6>
         </div>
 
     </div>
@@ -609,10 +608,12 @@
                     <input type="text" name="search" id="search" placeholder="Search Districts (ex: Bogra)"
                         class="form-control" />
                 </div>
+                <ul class="list-group" id="result"></ul>
+
+
+                <br />
             </div>
 
-            <ul class="list-group" id="result"></ul>
-            <br />
         </div>
     </div>
 </div>
@@ -622,24 +623,24 @@
         <div class="div-df div-df-sm">
             <div style="margin-top: -5px !important; margin-bottom: 8px !important;">
                 <div class="col-xs-4 div-contents" style="font-family: 'Montserrat', sans-serif !important;">
-                    <a href="https://pages.daraz.com.bd/wow/i/bd/landingpagetest/custom-footer?hybrid=1"
-                        style="cursor:pointer !important; font-weight: 600 !important;font-size: 12.6px !important;text-decoration: none !important;color: black;">
-                        <img class="div-img" src="https://gw.alicdn.com/tfs/TB1Wgodb4v1gK0jSZFFXXb0sXXa-208-208.png"
+                    <a href="https://www.daraz.com.bd/wow/i/bd/cp-campaigns/masher-bazar?hybrid=1"
+                        style="cursor:pointer !important; font-weight: 600 !important;font-size: 13.6px !important;text-decoration: none !important;color: black;">
+                        <img class="div-img" src="https://gw.alicdn.com/tfs/TB1T.zffuH2gK0jSZFEXXcqMpXa-120-120.png"
                             style="margin-bottom: 8px;">
                         <span>Homepage</span>
                     </a>
                 </div>
                 <div class="col-xs-4 div-contents" onclick="category2()"
                     style="font-family: 'Montserrat', sans-serif !important; cursor: pointer;">
-                    <img class="div-img" src="https://gw.alicdn.com/tfs/TB1n32NbFT7gK0jSZFpXXaTkpXa-100-100.png"
+                    <img class="div-img" src="https://gw.alicdn.com/tfs/TB1aGHffxn1gK0jSZKPXXXvUXXa-120-120.png"
                         style="margin-bottom: 8px;">
-                    <span style="cursor:pointer; font-weight: 600;font-size: 12.6px;">Outsite Dhaka</span>
+                    <span style="cursor:pointer; font-weight: 600;font-size: 13.6px;">Outsite Dhaka</span>
                 </div>
                 <div class="col-xs-4 div-contents" onclick="category1()"
                     style="font-family: 'Montserrat', sans-serif !important; cursor: pointer;">
-                    <img class="div-img" src="https://gw.alicdn.com/tfs/TB1OotgbebviK0jSZFNXXaApXXa-100-100.png"
+                    <img class="div-img" src="https://gw.alicdn.com/tfs/TB13frjfq61gK0jSZFlXXXDKFXa-150-150.png"
                         style="margin-bottom: 8px;">
-                    <span style="cursor:pointer; font-weight: 600;font-size: 12.6px;">Categories</span>
+                    <span style="cursor:pointer; font-weight: 600;font-size: 13.6px;">Categories</span>
                 </div>
 
             </div>
@@ -888,7 +889,7 @@
             $('#state').val('');
             var searchField = $('#search').val();
             var expression = new RegExp(searchField, "i");
-            $.getJSON('https://api.myjson.com/bins/zmydt', function (data) {
+            $.getJSON('https://api.myjson.com/bins/16rtdh', function (data) {
                 $.each(data, function (key, value) {
                     if (value.name.search(expression) != -1 || value.name.search(
                             expression) != -1) {
