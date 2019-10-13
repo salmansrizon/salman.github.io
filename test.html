@@ -13,13 +13,25 @@
     #result {
         position: absolute;
         width: 100%;
-        max-width: 870px;
+        /* max-width: 870px; */
         cursor: pointer;
         overflow-y: auto;
-        max-height: 700px;
+        max-height: 300px;
         box-sizing: border-box;
         z-index: 1001;
-        padding-right: 32px!important;    
+        /* padding-right: 32px !important; */
+    }
+
+    #result1 {
+        position: absolute;
+        width: 100%;
+        /* max-width: 870px; */
+        cursor: pointer;
+        overflow-y: auto;
+        max-height: 400px;
+        box-sizing: border-box;
+        z-index: 1001;
+        /* padding-right: 32px !important; */
     }
 
     .link-class:hover {
@@ -85,6 +97,11 @@
         box-shadow: rgba(0, 0, 0, 0.11) 0px 0.96px 4.8px 0px !important;
         float: left !important;
         width: 100% !important;
+    }
+
+    .list-group {
+        padding-left: 0px !important;
+        padding-right: 30px !important;
     }
 
     .list-group-item-action:active {
@@ -613,9 +630,17 @@
                     <input type="text" name="search" id="search" placeholder="Search Districts (ex: Bogra)"
                         class="form-control" />
                 </div>
-                <ul class="list-group" id="result"></ul>
-
-
+                <div>
+                    <ul class="list-group" id="result"></ul>
+                </div>
+                <div>
+                    <img src="https://img.alicdn.com/tfs/TB10.VUi7L0gK0jSZFtXXXQCXXa-251-251.svg" height="250px"
+                        width="250px" style="text-align: center; opacity: 0.2; padding-left: 88px;">
+                    <h3 style="text-align: center;">More Suggations for you</h3>
+                </div>
+                <div>
+                    <ul class="list-group" id="result1"></ul>
+                </div>
                 <br />
             </div>
 
@@ -630,20 +655,23 @@
                 <div class="col-xs-4 div-contents" style="font-family: 'Montserrat', sans-serif !important;">
                     <a href="https://www.daraz.com.bd/wow/i/bd/cp-campaigns/masher-bazar?hybrid=1"
                         style="cursor:pointer !important; font-weight: 600 !important;font-size: 13.6px !important;text-decoration: none !important;color: black;">
-                        <img class="div-img" src="https://laz-img-cdn.alicdn.com/images/ims-web/TB1s4GOhlr0gK0jSZFnXXbRRXXa.png"
+                        <img class="div-img"
+                            src="https://laz-img-cdn.alicdn.com/images/ims-web/TB1s4GOhlr0gK0jSZFnXXbRRXXa.png"
                             style="margin-bottom: 8px;">
                         <span>Homepage</span>
                     </a>
                 </div>
                 <div class="col-xs-4 div-contents" onclick="category2()"
                     style="font-family: 'Montserrat', sans-serif !important; cursor: pointer;">
-                    <img class="div-img" src="https://laz-img-cdn.alicdn.com/images/ims-web/TB1JxyOhlr0gK0jSZFnXXbRRXXa.png"
+                    <img class="div-img"
+                        src="https://laz-img-cdn.alicdn.com/images/ims-web/TB1JxyOhlr0gK0jSZFnXXbRRXXa.png"
                         style="margin-bottom: 8px;">
                     <span style="cursor:pointer; font-weight: 600;font-size: 13.6px;">Outside Dhaka</span>
                 </div>
                 <div class="col-xs-4 div-contents" onclick="category1()"
                     style="font-family: 'Montserrat', sans-serif !important; cursor: pointer;">
-                    <img class="div-img" src="https://laz-img-cdn.alicdn.com/images/ims-web/TB1sxCOhlr0gK0jSZFnXXbRRXXa.png"
+                    <img class="div-img"
+                        src="https://laz-img-cdn.alicdn.com/images/ims-web/TB1sxCOhlr0gK0jSZFnXXbRRXXa.png"
                         style="margin-bottom: 8px;">
                     <span style="cursor:pointer; font-weight: 600;font-size: 13.6px;">Categories</span>
                 </div>
@@ -895,9 +923,9 @@
             var searchField = $('#search').val();
             var expression = new RegExp(searchField, "i");
             $.getJSON('https://api.myjson.com/bins/16rtdh', function (data) {
+                $('#result').empty();
                 $.each(data, function (key, value) {
-                    if (value.name.search(expression) != -1 || value.name.search(
-                            expression) != -1) {
+                    if (value.name.search(expression) != -1) {
                         $('#result').append(
                             '<li class="list-group-item link-class">' +
                             value.name + '<span style="display:none!important">| ' +
@@ -919,6 +947,16 @@
             console.log(url)
             $("#search").html('<a href="' + url + '">' + name + '</a>');
             $(location).attr('href', url);
+        });
+
+        $.getJSON('https://api.myjson.com/bins/16rtdh', function (data) {
+            $.each(data, function (key, value) {
+                $('#result1').append(
+                    '<li class="list-group-item link-class">' +
+                    value.name + '<span style="display:none!important">| ' +
+                    value.url + '</span>');
+
+            });
         });
     });
 </script>
